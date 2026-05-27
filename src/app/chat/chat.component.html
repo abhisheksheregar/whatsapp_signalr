@@ -1,0 +1,70 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <h3>Chats</h3>
+
+    <div
+      class="user"
+      *ngFor="let user of users()"
+      (click)="open(user)"
+    >
+
+      <span
+        [matBadge]="unread[user]"
+        [matBadgeHidden]="!unread[user]"
+      >
+        {{ user }}
+      </span>
+
+    </div>
+
+  </aside>
+
+  <!-- Chat Area -->
+  <main class="chat">
+
+    <div class="header">
+      {{ selected || 'Select or type user' }}
+    </div>
+
+    <!-- Messages -->
+    <div class="messages">
+
+      <div
+        *ngFor="let msg of chats[selected] || []"
+        class="bubble"
+        [class.mine]="msg.mine"
+      >
+        {{ msg.text }}
+      </div>
+
+    </div>
+
+    <!-- Composer -->
+    <div class="composer">
+
+      <input
+        [(ngModel)]="receiver"
+        placeholder="Receiver username"
+      >
+
+      <input
+        [(ngModel)]="message"
+        placeholder="Type message"
+      >
+
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="send()"
+      >
+        Send
+      </button>
+
+    </div>
+
+  </main>
+
+</div>

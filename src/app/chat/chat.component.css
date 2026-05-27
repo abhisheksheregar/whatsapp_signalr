@@ -1,0 +1,13 @@
+.layout { display:flex; height:100vh; font-family:Arial; }
+.sidebar { width:280px; background:#f8f9fb; border-right:1px solid #ddd; padding:16px; }
+.user { padding:12px; border-radius:10px; cursor:pointer; margin-bottom:8px; }
+.user:hover { background:#eceff4; }
+.chat { flex:1; display:flex; flex-direction:column; }
+.header { padding:16px; border-bottom:1px solid #ddd; font-weight:600; }
+.messages { flex:1; padding:20px; overflow:auto; background:#f4f6f8; }
+.bubble { width:fit-content; max-width:70%; background:white; padding:10px 14px; border-radius:14px; margin-bottom:10px; }
+.mine { margin-left:auto; background:#d7f7d7; }
+.composer { display:flex; gap:10px; padding:16px; border-top:1px solid #ddd; }
+.composer input { flex:1; padding:10px; border:1px solid #ccc; border-radius:8px; }
+.center { display:grid; place-items:center; height:100vh; }
+mat-card { padding:24px; width:360px; }
